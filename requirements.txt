@@ -1,0 +1,22 @@
+# Core Scientific Libraries
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+matplotlib>=3.7
+seaborn>=0.12
+
+# Streamlit Dashboard
+streamlit>=1.29
+
+# PDF Report Generation
+pdfkit>=1.0.0
+Jinja2>=3.1.2
+
+# Testing
+pytest>=8.0
+
+# Optional (if using QuantLib later)
+# QuantLib-Python
+
+# Windows-only: install wkhtmltopdf manually and add to PATH
+# https://wkhtmltopdf.org/downloads.html
