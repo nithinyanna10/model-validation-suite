@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Model Validation Report</title>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { color: #2e6c80; }
+    img { max-width: 700px; margin-bottom: 20px; }
+    .section { margin-top: 30px; }
+    ul { line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <h1>📄 Model Validation Report</h1>
+  <p><strong>Generated:</strong> {{ timestamp }}</p>
+
+  <div class="section">
+    <h2>🛠 Configuration</h2>
+    {% if config %}
+      <ul>
+        {% for key, value in config.items() %}
+          <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No config metadata found.</p>
+    {% endif %}
+  </div>
+
+  <div class="section">
+    <h2>📈 Plots</h2>
+    {% if plots %}
+      {% for title, path in plots.items() %}
+        <h3>{{ title }}</h3>
+        <img src="file://{{ path | replace('\\', '/') }}" alt="{{ title }}">
+      {% endfor %}
+    {% else %}
+      <p>No plots were included in this report.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
